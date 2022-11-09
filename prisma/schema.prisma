@@ -13,7 +13,8 @@ datasource db {
 model User{
   id Int @id @default(autoincrement())
   fullname String
-  age String?
+  username String
+  age Int?
   password String
   createdAt DateTime @default(now())
   updateAt DateTime @updatedAt
