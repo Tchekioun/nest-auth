@@ -12,6 +12,7 @@ export class AppController {
   @UseGuards(LocalAuthGuard)
   @Post('login')
   async login(@Request() req) {
-    return this.authService.login(req.user);
+    const access_token = await this.authService.login(req.user);
+    return { ...access_token, user: req.user };
   }
 }
